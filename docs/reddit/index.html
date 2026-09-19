@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wolfpole — Reddit launch posts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --surface: #121922;
+      --border: #243041;
+      --text: #e7edf5;
+      --muted: #93a4b8;
+      --accent: #5eead4;
+    }
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap { width: min(860px, calc(100% - 2rem)); margin: 0 auto; padding: 2rem 0 3rem; }
+    a { color: var(--accent); }
+    h1 { margin-top: 0; }
+    .intro { color: var(--muted); margin-bottom: 2rem; }
+    .post {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .post h2 { margin: 0 0 0.35rem; font-size: 1.1rem; }
+    .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.75rem; }
+    pre {
+      white-space: pre-wrap;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.88rem;
+      background: rgba(0,0,0,0.25);
+      border-radius: 8px;
+      padding: 0.85rem;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p><a href="../">← Back to Wolfpole</a></p>
+    <h1>Reddit launch posts</h1>
+    <p class="intro">Copy the post body for each subreddit. Titles and bodies are also in the markdown files in this folder on GitHub.</p>
+
+    <article class="post">
+      <h2>r/SBCGaming</h2>
+      <div class="meta">Title: I rewrote the SF2000 card tool (Tadpole/Madpole) with a verified build pipeline — Wolfpole v1.0</div>
+      <pre>I've been using Tadpole/Madpole on my SF2000 for a while, but the card builder always felt like a coin flip: pop a dialog, hope the download finished, hope the card wasn't fake, boot the console and find out.
+
+So I rewrote it as **Wolfpole** — same frogtool/Tadpole lineage, but with a build pipeline that stops at the first stage it can't trust:
+
+- **Pre-flight** — FAT32 only (exFAT hard stop), capacity sanity, empty card, write/read test, measured write speed
+- **Download** — resumable with HTTP Range, retries, SHA-256 when published, cached off-card
+- **Archive inspection** — zip-slip blocked *before* extraction
+- **Extract + verify** — CRC on write, full re-read verification by default (catches counterfeits and bad sectors)
+- **Resume** — manifest-backed so interrupted builds don't start over
+
+Beyond building, there's a cover-grid library with live folder watching, shortcut slots, duplicate finder, tidy ROM names, all-systems view, card doctor/rescue tools, and a deep ~48 MB card test for fakes.
+
+It also fixes a bunch of long-standing bugs in the original UI layer (thumbnail memory lifetime, rename hitting wrong rows, delete counting cells instead of ROMs, GUI-thread network I/O, etc.).
+
+**Links**
+- Site: https://wolfodia.github.io/wolfpole/
+- Repo: https://github.com/Wolfodia/wolfpole
+- Python 3 + PyQt5/6, `psutil`, `requests`
+
+Happy to answer questions — especially around the build verification and fake-card detection side.</pre>
+    </article>
+
+    <article class="post">
+      <h2>r/RetroHandhelds</h2>
+      <div class="meta">Title: Wolfpole — SF2000 SD manager rewrite with checked card builds, cover grid, and rescue tools</div>
+      <pre>For anyone still wrangling SF2000 cards: I released **Wolfpole v1.0**, a from-scratch UI + builder rewrite of Madpole/Tadpole.
+
+The part I'm most proud of is **Build a card** — it's not "download zip, extract, pray". Each stage has a gate:
+
+1. Pre-flight (filesystem, capacity, empty, access test, speed)
+2. Resumable verified download to cache
+3. Archive inspection (no zip-slip, strip junk)
+4. Extract with per-file CRC + optional full re-read
+5. Manifest so builds resume instead of restarting
+
+Also on the page: deep card test (~48 MB spread write/read), card doctor, missing-folder repair, shortcut layout export/import, drag-drop art onto covers, and headless CLI for rebuild/backup.
+
+Lineage credits: Eric Goldstein (Tadpole), faanJD (Madpole), tzlion (frogtool).
+
+- https://wolfodia.github.io/wolfpole/
+- https://github.com/Wolfodia/wolfpole
+
+If you've got a card that "worked once then corrupted saves", the write-speed + deep test steps are worth running before you trust it.</pre>
+    </article>
+
+    <article class="post">
+      <h2>r/emulation</h2>
+      <div class="meta">Title: Wolfpole 1.0 — open-source SF2000 SD card manager with verified firmware installs</div>
+      <pre>Released **Wolfpole**, an open-source SF2000 SD card manager (Python/PyQt) that replaces the Tadpole/Madpole workflow for people who want the card build to be checked end-to-end.
+
+Highlights:
+- Verified firmware pipeline (pre-flight, resumable download, zip-slip protection, CRC on write, re-read verification)
+- Cover-grid ROM library with GitHub thumbnail API (not HTML scraping)
+- Bulk tools: tidy names, duplicates, move between systems, shortcut export/import
+- Headless commands for rebuild/backup/list-drives
+- Rescue/doctor for common SF2000 card issues
+
+Not trying to be a generic emulator frontend — it's specifically for SF2000 owners managing the SD layout, firmware, ROM indexes, and saves.
+
+Project page: https://wolfodia.github.io/wolfpole/
+Source: https://github.com/Wolfodia/wolfpole
+
+Feedback and issue reports welcome.</pre>
+    </article>
+
+    <article class="post">
+      <h2>r/retrogaming</h2>
+      <div class="meta">Title: Made a safer SF2000 card builder + ROM library tool (Wolfpole) — stops bad cards before you boot</div>
+      <pre>If you use an SF2000, you may know Tadpole/Madpole for managing the SD card. I rebuilt that experience as **Wolfpole** because too many "it won't boot" problems are really bad downloads, fake SD cards, or silent write failures.
+
+Wolfpole's card builder verifies each step and can re-read every extracted file to confirm what's on the card matches what you think you wrote. There's also a deep write/read test to smoke out counterfeit cards before your saves do.
+
+On the library side: cover art grid, shortcut slots, filters for missing artwork, duplicate finder, and live folder watching when you edit the card in Explorer/Finder.
+
+Open source, free, Python-based:
+https://github.com/Wolfodia/wolfpole
+Overview: https://wolfodia.github.io/wolfpole/</pre>
+    </article>
+  </div>
+</body>
+</html>

@@ -4,6 +4,8 @@ An SF2000 SD card manager — a rewrite of **Madpole** (a fork of **Tadpole**, b
 **tzlion's frogtool**), with an interface built from scratch and a card builder that
 actually checks its work.
 
+**Project page:** https://wolfodia.github.io/wolfpole/
+
 | File | Role |
 |---|---|
 | `wolfpole.py` | Entry point: command line, logging, bootstrap |
