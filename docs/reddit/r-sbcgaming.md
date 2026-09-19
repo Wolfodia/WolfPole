@@ -19,8 +19,8 @@ Beyond building, there's a cover-grid library with live folder watching, shortcu
 It also fixes a bunch of long-standing bugs in the original UI layer (thumbnail memory lifetime, rename hitting wrong rows, delete counting cells instead of ROMs, GUI-thread network I/O, etc.).
 
 **Links**
-- Site: https://wolfodia.github.io/wolfpole/
-- Repo: https://github.com/Wolfodia/wolfpole
+- Site: https://wolfodia.github.io/WolfPole/
+- Repo: https://github.com/Wolfodia/WolfPole
 - Python 3 + PyQt5/6, `psutil`, `requests`
 
 Happy to answer questions — especially around the build verification and fake-card detection side.

@@ -11,5 +11,5 @@ Wolfpole's card builder verifies each step and can re-read every extracted file 
 On the library side: cover art grid, shortcut slots, filters for missing artwork, duplicate finder, and live folder watching when you edit the card in Explorer/Finder.
 
 Open source, free, Python-based:
-https://github.com/Wolfodia/wolfpole
-Overview: https://wolfodia.github.io/wolfpole/
+https://github.com/Wolfodia/WolfPole
+Overview: https://wolfodia.github.io/WolfPole/

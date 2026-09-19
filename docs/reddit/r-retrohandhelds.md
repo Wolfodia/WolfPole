@@ -18,7 +18,7 @@ Also on the page: deep card test (~48 MB spread write/read), card doctor, missin
 
 Lineage credits: Eric Goldstein (Tadpole), faanJD (Madpole), tzlion (frogtool).
 
-- https://wolfodia.github.io/wolfpole/
-- https://github.com/Wolfodia/wolfpole
+- https://wolfodia.github.io/WolfPole/
+- https://github.com/Wolfodia/WolfPole
 
 If you've got a card that "worked once then corrupted saves", the write-speed + deep test steps are worth running before you trust it.

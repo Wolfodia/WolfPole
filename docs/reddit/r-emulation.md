@@ -15,7 +15,7 @@ Highlights:
 
 Not trying to be a generic emulator frontend — it's specifically for SF2000 owners managing the SD layout, firmware, ROM indexes, and saves.
 
-Project page: https://wolfodia.github.io/wolfpole/
-Source: https://github.com/Wolfodia/wolfpole
+Project page: https://wolfodia.github.io/WolfPole/
+Source: https://github.com/Wolfodia/WolfPole
 
 Feedback and issue reports welcome.
