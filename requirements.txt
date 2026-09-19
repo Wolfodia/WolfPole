@@ -1,0 +1,5 @@
+# Wolfpole runtime requirements.
+# Either Qt binding works; PyQt5 matches the original Tadpole/Madpole stack.
+PyQt5>=5.15 ; python_version < "3.13"
+psutil>=5.9
+requests>=2.28

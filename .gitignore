@@ -1,0 +1,17 @@
+# Wolfpole & Tadpole data
+wolfpole-data/
+*.ini
+*.log
+*.tmp
+currentBackground.temp.png
+
+# Python / Virtual Environment
+__pycache__/
+*.py[cod]
+venv/
+.env
+
+# Build outputs
+dist/
+build/
+*.spec
